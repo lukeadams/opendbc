@@ -6,11 +6,11 @@ import sys
 import jinja2
 
 from collections import Counter
-from opendbc.can.dbc import dbc
+from dbc import dbc
 
 def process(in_fn, out_fn):
   dbc_name = os.path.split(out_fn)[-1].replace('.cc', '')
-  # print("processing %s: %s -> %s" % (dbc_name, in_fn, out_fn))
+  print("processing %s: %s -> %s" % (dbc_name, in_fn, out_fn))
 
   template_fn = os.path.join(os.path.dirname(__file__), "dbc_template.cc")
 
@@ -111,14 +111,11 @@ def process(in_fn, out_fn):
 
 def main():
   if len(sys.argv) != 3:
-    print("usage: %s dbc_directory output_filename" % (sys.argv[0],))
+    print("usage: %s dbc_src output_filename" % (sys.argv[0],))
     sys.exit(0)
 
-  dbc_dir = sys.argv[1]
+  in_fn = sys.argv[1]
   out_fn = sys.argv[2]
-
-  dbc_name = os.path.split(out_fn)[-1].replace('.cc', '')
-  in_fn = os.path.join(dbc_dir, dbc_name + '.dbc')
 
   process(in_fn, out_fn)
 

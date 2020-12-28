@@ -6,7 +6,7 @@
 
 #include "common_dbc.h"
 #include <capnp/serialize.h>
-#include "cereal/gen/cpp/log.capnp.h"
+#include "log.capnp.h"
 
 #define MAX_BAD_COUNTER 5
 
