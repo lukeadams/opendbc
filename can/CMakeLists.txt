@@ -7,10 +7,6 @@
 # lenv.Program('packer_pyx.so', 'packer_pyx.pyx')
 
 
-# cython code
-find_package (Python COMPONENTS Interpreter Development REQUIRED) 
-find_package(Cython REQUIRED)
-
 # parser
 add_cython_target(opendbc-parser-pyx
     parser_pyx.pyx CXX PY3
