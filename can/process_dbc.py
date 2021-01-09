@@ -10,7 +10,7 @@ from dbc import dbc
 
 def process(in_fn, out_fn):
   dbc_name = os.path.split(out_fn)[-1].replace('.cc', '')
-  print("processing %s: %s -> %s" % (dbc_name, in_fn, out_fn))
+  # print("processing %s: %s -> %s" % (dbc_name, in_fn, out_fn))
 
   template_fn = os.path.join(os.path.dirname(__file__), "dbc_template.cc")
 
